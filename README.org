@@ -1,0 +1,26 @@
+#+title: Advent of code 2023
+#+author: Luca Zaninotto -- 2057074
+#+date: \today
+* Structure
+  Each day has its own folder, all contined in ~src~:
+  #+begin_src fundamental
+    src/
+    ├── d1
+    ├── d2
+    ├── d3
+    └── ...
+  #+end_src
+  each day might use a different language, but I'll try to do
+  everything in either =rust= or =lisp=.
+** Rust projects
+   Can be simply run with
+   #+begin_src sh
+     cargo run
+   #+end_src
+** Lisp projects
+   Can be run by using any common lisp interpreter (e.g., =sbcl=)
+   #+begin_src sh
+     sbcl main.lisp
+   #+end_src
+** Special cases
+   Will describe how to be handled in their specific folder
