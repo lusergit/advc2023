@@ -1,0 +1,6 @@
+#+title: Day one
+#+author: Luca Zaninotto -- 2057074
+#+date: \today
+* Sorry
+  Today python as it's super easy with python (massive regex usage
+  that I did not want to do in rust).
