@@ -1,6 +1,13 @@
 #+title: Day one
 #+author: Luca Zaninotto -- 2057074
 #+date: \today
-* Sorry
-  Today python as it's super easy with python (massive regex usage
-  that I did not want to do in rust).
+* Lisp
+  to run the first lisp script is sufficient to use
+  #+begin_src sh
+    sbcl --script one.lisp
+  #+end_src
+  for the second one the environment needs =quicklisp=, therefore is
+  better to load it:
+  #+begin_src sh
+    sbcl --load two.lisp
+  #+end_src

@@ -23,11 +23,9 @@ def replace_in_line(line):
 
 def main():
     with open("input.txt") as f:
-        new_lines = []
         summ = 0
         for line in f.readlines():
             line = replace_in_line(line)
-            new_lines.append(line)
             d1 = firstdigit(line)
             d2 = firstdigit(reversed(line))
             summ += int(''.join([d1, d2]))
