@@ -1,0 +1,7 @@
+#+title: Day two
+#+author: Luca Zaninotto -- 2057074
+#+date: \today
+* Solving
+  #+begin_src sh
+    sbcl --load solve.lisp 
+  #+end_src
