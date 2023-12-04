@@ -1,0 +1,13 @@
+#+title: Day 3
+#+author: Luca Zaninotto -- 2057074
+#+date: \today
+* Lisp
+  Load the solution
+  #+begin_src sh
+    sbcl --load sol.lisp
+  #+end_src
+  And with the input in the =input.txt= file you can just run
+  #+begin_src lisp
+    (solve-1)				;Solves first problem
+    (solve-2)				;Solves second problem
+  #+end_src
