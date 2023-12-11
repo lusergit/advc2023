@@ -1,4 +1,3 @@
-(load "~/quicklisp/setup.lisp")
 (ql:quickload :split-sequence)
 
 (defmacro ssq (char sequence)

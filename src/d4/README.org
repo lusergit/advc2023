@@ -1,0 +1,8 @@
+#+title: Day 4
+#+author: Luca Zaninotto -- 2057074
+#+date: \today
+* Lisp
+  Like any other lisp day
+  #+begin_src sh
+    sbcl --load sol.lisp
+  #+end_src
