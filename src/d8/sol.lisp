@@ -1,0 +1,37 @@
+(defun extract-nodes (input-lines)
+  (let ((nodes (make-hash-table :test #'equal)))
+    (loop :for line :in input-lines
+          :for key = (subseq line 0 3)
+          :for left = (subseq line 7 10)
+          :for right = (subseq line 12 15)
+          :do (setf (gethash key nodes) `(,left . ,right)))
+    nodes))
+
+(defun path-steps (start instructions nodes &key one-z-on-end)
+  (let ((steps 0)
+        (current start))
+    (loop :for dir = (char instructions (mod steps (length instructions)))
+          :for ways = (gethash current nodes)
+          :if (char= dir #\L)
+            :do (setf current (car ways))
+          :if (char= dir #\R)
+            :do (setf current (cdr ways))
+          :do (incf steps)
+          :if (if one-z-on-end
+                  (char= (char current 2) #\Z)
+                  (string= current "ZZZ"))
+            :do (return-from path-steps steps))))
+
+(defun solve-08-a ()
+  (let* ((input-lines (uiop:read-file-lines #p"input.txt"))
+         (instructions (first input-lines))
+         (nodes (extract-nodes (cddr input-lines))))
+    (path-steps "AAA" instructions nodes)))
+
+(defun solve-08-b ()
+  (let* ((input-lines (uiop:read-file-lines #p"input.txt"))
+         (instructions  (first input-lines))
+         (nodes (extract-nodes (cddr input-lines)))
+         (starts (loop :for key :being :the :hash-key :of nodes
+                       :if (char= (char key 2) #\A) :collect key)))
+    (apply #'lcm (mapcar (lambda (key) (path-steps key instructions nodes :one-z-on-end t)) starts))))
